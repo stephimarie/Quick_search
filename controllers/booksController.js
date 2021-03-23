@@ -32,6 +32,16 @@ module.exports = {
           console.log("error saving book ", err);
           return false;
         }
-      },
+    },
+    deleteBook: async (req, res) => {
+        console.log("deleted the book");
     
+        try {
+          const delBook = await Book.findById({ _id: req.params.id })
+            .then((book) => book.remove())
+            .then((book) => res.json(book));
+        } catch (err) {
+          console.log("oh no, error deleting ", err);
+        }
+      },
 };
