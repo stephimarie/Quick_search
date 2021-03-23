@@ -24,10 +24,12 @@ mongoose.connect(
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-// Define API routes here
 app.use("/api/search", require("./routes/searchRoutes"));
 app.use("/api/db", require("./routes/dbRoutes"));
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 app.listen(PORT, () => {  
   console.log(`connected to http://localhost:${PORT}`)
