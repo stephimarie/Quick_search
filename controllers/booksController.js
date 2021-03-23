@@ -44,4 +44,17 @@ module.exports = {
           console.log("oh no, error deleting ", err);
         }
       },
+      updateOne: async (req, res) => {
+        try {
+          const foundBookPost = await Book.findById(req.params.id);
+          const { title, text } = req.body;
+    
+          if (title) foundBookPost.title = title;
+          if (text) foundBookPost.text = text;
+    
+          res.json(await foundBookPost.save());
+        } catch (err) {
+          res.json(err);
+        }
+      },
 };
