@@ -13,8 +13,8 @@ module.exports = {
         res.json(searching);
         console.log("searching ", searching);
       } catch (err) {
-          console.log("oh no, we have a get search err", err);
-          res.send("couldn't search books", err);
+        console.log("oh no, we have a get search err", err);
+        res.send("couldn't search books", err);
       }
     },
   };
