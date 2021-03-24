@@ -59,7 +59,7 @@ const Search = () => {
       <div className="container">
         {error && (
           <div style={{ color: `red`, textAlign: `center` }}>
-            there are no books for that search.
+            Sorry, no books for that search.
           </div>
         )}
         <BookList result={result} />
