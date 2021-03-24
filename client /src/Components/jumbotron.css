@@ -1,0 +1,15 @@
+h5 {
+    font-size: 70px;
+    color: rgb(97, 97, 97);
+    opacity: 0.4;
+  }
+  
+  .google-jumbo {
+    margin-bottom: 50px;
+    height: 330px;
+    text-align: center;
+    background-image: url("https://cms.qz.com/wp-content/uploads/2016/05/books.jpg?quality=80&strip=all&w=2000");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  
