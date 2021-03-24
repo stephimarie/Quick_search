@@ -3,8 +3,6 @@ const Book = require("../models/bookModels");
 module.exports = {
     
     getSaved: async (req, res) => {
-        console.log("got the books");
-
         try {
           const allBooks = await Book.find();
           res.json(allBooks);
@@ -14,8 +12,6 @@ module.exports = {
         }
     },
     saveBook: async (req, res) => {
-        console.log("saved your book");
-    
         try {
           const newBook = new Book({
             title: req.title,
@@ -33,15 +29,13 @@ module.exports = {
           return false;
         }
     },
-    deleteBook: async (req, res) => {
-        console.log("deleted the book");
-    
+    deleteBook: async (req, res) => {    
         try {
           const delBook = await Book.findById({ _id: req.params.id })
             .then((book) => book.remove())
             .then((book) => res.json(book));
         } catch (err) {
-          console.log("oh no, error deleting ", err);
+          res.send(err);
         }
       },
       updateOne: async (req, res) => {

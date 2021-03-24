@@ -3,7 +3,6 @@ const axios = require("axios");
 
 module.exports = {
     searchBooks: async (req, res) => {
-      console.log("searched books");
       const searchParam = req.body.searchInput;
       const KEY = process.env.API_KEY;
       try {
